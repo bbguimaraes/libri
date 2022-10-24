@@ -1,5 +1,5 @@
 ENV = LANG=C max_print_line=1000 error_line=254 half_error_line=238
-PDFLATEX := texfot pdflatex
+PDFLATEX := texfot xelatex
 MAKE_PDF := \
 	$(ENV) latexmk \
 		--pdflatex='$(PDFLATEX)' \

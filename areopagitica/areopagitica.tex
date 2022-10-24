@@ -1,0 +1,25 @@
+\documentclass[a4paper]{book}
+\usepackage[
+    a4paper,heightrounded,includefoot,includemp,
+    top=4cm,bottom=4cm,outer=1cm,inner=3.5cm,
+    marginparwidth=4cm,
+]{geometry}
+\usepackage{hyperref}
+\usepackage{lettrine}
+\usepackage{polyglossia}
+\usepackage{titling}
+
+\setmainlanguage{english}
+\setotherlanguage{greek}
+\newfontfamily{\greekfont}{DejaVuSerif}
+
+\title{Areopagitica}
+\author{John Milton}
+
+\begin{document}
+    \frontmatter
+    \input{title.tex}
+    \input{front.tex}
+    \mainmatter
+    \input{main.tex}
+\end{document}
