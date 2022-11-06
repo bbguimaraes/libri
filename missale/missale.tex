@@ -1,0 +1,79 @@
+\documentclass[a4paper]{book}
+\usepackage[
+    a4paper,heightrounded,includefoot,includemp,
+    top=4cm,bottom=4cm,outer=1cm,inner=3.5cm,
+    marginparwidth=4cm,
+]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{lettrine}
+\usepackage{polyglossia}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{wrapfig}
+%\usepackage{showframe}
+
+\setmainlanguage{english}
+\setotherlanguage{greek}
+\setotherlanguage{latin}
+\newfontfamily{\greekfont}{DejaVuSerif}
+\newfontfamily{\romanfont}{Nimbus Roman}
+\newfontfamily{\liturgicalfont}{Junicode}
+\selectlanguage{latin}
+
+\pagestyle{plain}
+\setcounter{tocdepth}{1}
+%\setcounter{secnumdepth}{0}
+\renewcommand{\numberline}[1]{}
+
+\titleclass{\chapter}{straight}
+\titleformat{\chapter}[hang]
+    {}{}{0pt}{\filcenter\romanfont\huge\MakeUppercase}
+\titleformat{\section}[hang]
+    {}{}{0pt}{\filcenter\romanfont\large\MakeUppercase}
+\titleformat{\subsection}[hang]
+    {}{}{0pt}{\filcenter\romanfont\itshape\MakeUppercase}
+\titlespacing{\section}{0pt}{1em}{0.5em}
+\titlespacing{\subsection}{0pt}{1em}{0.5em}
+\addto{\captionsenglish}{\renewcommand\contentsname{Index}}
+
+\newcommand{\persona}[1]{
+    \makebox[1em][c]{\liturgicalfont{}#1.}
+}
+\newcommand{\bibliafmt}[1]{{\bfseries\itshape{}#1}}
+\newcommand{\biblia}[1]{\bibliafmt{#1}}
+\newcommand{\versiculum}{\persona{℣}}
+\newcommand{\responsorium}{\persona{℟}}
+\newcommand{\sacerdos}{\persona{S}}
+\newcommand{\minister}{\persona{M}}
+\newcommand{\cross}{{\liturgicalfont\huge\raisebox{-0.2em}{᛭}}}
+\newcommand{\sinus}{\directio{sinus}}
+\newcommand{\alternatim}[1]{{\setlength{\parskip}{0pt}#1}}
+\newcommand{\initialis}[2][2]{\lettrine[lines=#1]{\romanfont\bfseries{}#2}{} }
+\newcommand{\directio}[1]{[\hspace{0.1em}\textit{#1}\hspace{0.2em}]}
+\newcommand{\proprius}[1]{\directio{proprius: #1}}
+
+\newcommand{\divisio}{{
+    \setlength{\parskip}{0pt}
+    \vspace{0.25em}
+    \hspace{\fill}\rule{0.33\textwidth}{.2pt}\hspace*{\fill}
+    \vspace{0.25em}
+}}
+
+\title{Missale}
+\date{1962}
+
+\begin{document}
+    \frontmatter
+    \titlespacing{\chapter}{0pt}{\baselineskip}{\baselineskip}
+    \input{titulus.tex}
+    \input{ante.tex}
+    \mainmatter
+    \titleclass{\chapter}{top}
+    \titlespacing{\chapter}{0pt}{0pt}{1em}
+    \setlength{\parskip}{0.5em}
+    \input{asperges.tex}
+    \input{catech.tex}
+    \input{fidel.tex}
+\end{document}
